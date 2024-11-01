@@ -24,7 +24,7 @@ export default function Navigator() {
                 headerShown: false,
                 tabBarLabel: 'Home',
                 tabBarIcon: ({ color, size }) => (
-                    <Ionicons name="home" color={'white'} size={size} />
+                    <Ionicons name="home" color={color} size={size} />
                 ),
             }} />
             <Tab.Screen name="Inventory" component={Inventory} options={{
