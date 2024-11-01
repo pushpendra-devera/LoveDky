@@ -1,17 +1,17 @@
-import { Image, SafeAreaView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React, { Component } from 'react';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import React, { Component } from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default class EmailAccountLogin extends Component {
-    render() {
 
+export default class EmailAccountRegistration extends Component {
+    render() {
         return (
             <View style={styles.container}>
 
                 {/* Title */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 60 }}>
                     <Image
-                        style={{ height: 90, width: 250, marginBottom: 40 }}
+                        style={{ height: 90, width: 250, marginBottom: 20 }}
                         source={{
                             uri: 'https://lovedky.com/cdn/shop/files/dky_logo_with_wings_white-01.png',
                         }} />
@@ -19,14 +19,24 @@ export default class EmailAccountLogin extends Component {
 
 
                 {/* Header */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', marginBottom: 40 }}>
+                <View style={{ justifyContent: 'center', alignItems: 'center', marginBottom: 20 }}>
                     <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>Welcome to LoveDKY</Text>
-                    <Text style={{ color: 'white', fontSize: 15, marginTop: 5, fontStyle: 'italic' }}>Elevate Your Wardrobe, Embrace Your Style</Text>
+                    <Text style={{ color: 'white', fontSize: 15, marginTop: 5, fontStyle: 'italic' }}>Register Yourself to access the inventory</Text>
+                </View>
+
+                {/* Username Input */}
+                <View style={styles.inputContainer}>
+                    <TextInput style={styles.input} placeholder="Name" placeholderTextColor="#555" />
                 </View>
 
                 {/* Email Input */}
                 <View style={styles.inputContainer}>
                     <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#555" />
+                </View>
+
+                {/* Email Input */}
+                <View style={styles.inputContainer}>
+                    <TextInput style={styles.input} placeholder="Number" placeholderTextColor="#555" />
                 </View>
 
                 {/* Password Input */}
@@ -35,22 +45,28 @@ export default class EmailAccountLogin extends Component {
                     <Icon name="visibility-off" size={20} color="#555" style={styles.icon} />
                 </View>
 
+                {/* Password Input */}
+                <View style={styles.inputContainer}>
+                    <TextInput style={styles.input} placeholder="Confirm Password" placeholderTextColor="#555" secureTextEntry />
+                    <Icon name="visibility-off" size={20} color="#555" style={styles.icon} />
+                </View>
+
                 {/* Forgot Password */}
-                <TouchableOpacity>
-                    <Text style={styles.forgotPassword}>Forgot Password?</Text>
-                </TouchableOpacity>
+                {/* <TouchableOpacity>
+            <Text style={styles.forgotPassword}>Forgot Password?</Text>
+        </TouchableOpacity> */}
 
                 {/* Login Button */}
                 <TouchableOpacity style={styles.loginButton}>
-                    <Text style={styles.loginText}>Login</Text>
+                    <Text style={styles.loginText}>Register</Text>
                 </TouchableOpacity>
 
                 {/* Footer Text */}
                 <Text style={styles.footerText}>
-                    Don't Have an Account? <Text onPress={() => this.props.navigation.navigate('Register')} style={{ fontWeight: 'bold', color: 'white' }}> Sign Up </Text>
+                    Have an Account? <Text onPress={() => this.props.navigation.navigate('Login')} style={{ fontWeight: 'bold', color: 'white' }}> Login </Text>
                 </Text>
             </View>
-        );
+        )
     }
 }
 const styles = StyleSheet.create({
@@ -137,7 +153,7 @@ const styles = StyleSheet.create({
         color: 'grey',
         fontSize: 15,
         textAlign: 'center',
-        marginTop: 10,
+
     },
     learnMore: {
         color: 'white',

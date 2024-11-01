@@ -25,6 +25,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import EmailAccountLogin from './src/Screens/EmailAccount/EmailAccountLogin';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import EmailAccountRegistration from './src/Screens/EmailAccount/EmailAccountRegistration';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -55,6 +58,7 @@ function Section({children, title}: SectionProps): JSX.Element {
     </View>
   );
 }
+const Stack = createNativeStackNavigator();
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -62,10 +66,16 @@ function App(): JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+  
 
   return (
+    <NavigationContainer>
+      <Stack.Navigator >
+        <Stack.Screen name="Login" component={EmailAccountLogin} options={{ headerShown: false }} />
+        <Stack.Screen name="Register" component={EmailAccountRegistration} options={{ headerShown: false }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
 
-      <EmailAccountLogin ></EmailAccountLogin>
   );
 }
 
