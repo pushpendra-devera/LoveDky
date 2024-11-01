@@ -28,6 +28,8 @@ import EmailAccountLogin from './src/Screens/EmailAccount/EmailAccountLogin';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import EmailAccountRegistration from './src/Screens/EmailAccount/EmailAccountRegistration';
+import HomeScreen from './src/Screens/Dashboard/HomeScreen';
+import Navigator from './src/Navigation/Navigator';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -73,6 +75,8 @@ function App(): JSX.Element {
       <Stack.Navigator >
         <Stack.Screen name="Login" component={EmailAccountLogin} options={{ headerShown: false }} />
         <Stack.Screen name="Register" component={EmailAccountRegistration} options={{ headerShown: false }}/>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Navigator" component={Navigator} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
 

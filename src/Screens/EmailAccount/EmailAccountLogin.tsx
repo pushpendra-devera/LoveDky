@@ -1,4 +1,4 @@
-import { Image, SafeAreaView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -41,7 +41,7 @@ export default class EmailAccountLogin extends Component {
                 </TouchableOpacity>
 
                 {/* Login Button */}
-                <TouchableOpacity style={styles.loginButton}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Navigator')} style={styles.loginButton}>
                     <Text style={styles.loginText}>Login</Text>
                 </TouchableOpacity>
 
